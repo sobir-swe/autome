@@ -2,11 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Lid_reason;
-use App\Models\ReasonStatus;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Database\Factories\LidReasonFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,6 +15,10 @@ class DatabaseSeeder extends Seeder
             ReasonLidSeeder::class,
             ReasonStatusSeeder::class,
             LidSeeder::class,
+            CenterTypeSeeder::class,
+            CenterSeeder::class,
+            SocialNetworkSeeder::class,
+            CenterSocialNetworkSeeder::class,
         ]);
     }
 }
