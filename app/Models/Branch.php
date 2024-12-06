@@ -21,4 +21,9 @@ class Branch extends Model
     {
         return $this->belongsTo(Center::class);
     }
+
+    public function instructors(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Instructor::class);
+    }
 }

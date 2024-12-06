@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             SocialNetworkSeeder::class,
             CenterSocialNetworkSeeder::class,
             BranchSeeder::class,
+            InstructorSeeder::class,
         ]);
     }
 }
