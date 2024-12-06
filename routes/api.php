@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\LidController;
+use App\Http\Controllers\ReasonLidController;
+use App\Http\Controllers\ReasonStatusController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::apiResource('/reason_lids', ReasonLidController::class);
+Route::apiResource('/reason_statuses', ReasonStatusController::class);
+Route::apiResource('/lids', LidController::class);
