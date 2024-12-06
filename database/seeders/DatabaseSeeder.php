@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             CenterSeeder::class,
             SocialNetworkSeeder::class,
             CenterSocialNetworkSeeder::class,
+            BranchSeeder::class,
         ]);
     }
 }
