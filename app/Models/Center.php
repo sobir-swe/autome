@@ -32,5 +32,10 @@ class Center extends Model
             ->withPivot('username')
             ->withTimestamps();
     }
+
+    public function branches(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Branch::class);
+    }
 }
 
