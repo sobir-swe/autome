@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BranchController;
 use App\Http\Controllers\CenterController;
 use App\Http\Controllers\CenterSocialNetworkController;
 use App\Http\Controllers\CenterTypeController;
@@ -16,3 +17,4 @@ Route::apiResource('/center_types', CenterTypeController::class);
 Route::apiResource('/centers', CenterController::class);
 Route::apiResource('/social_networks', SocialNetworkController::class);
 Route::apiResource('center_social_networks', CenterSocialNetworkController::class);
+Route::apiResource('/branches', BranchController::class);
