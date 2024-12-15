@@ -29,4 +29,10 @@ class Student extends Model
     {
         return $this->belongsTo(Branch::class);
     }
+
+    public function responsibles(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(StudentResponsible::class);
+    }
+
 }

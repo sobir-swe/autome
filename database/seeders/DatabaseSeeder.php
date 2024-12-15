@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             BranchSeeder::class,
             InstructorSeeder::class,
             StudentSeeder::class,
+            StudentResponsibleSeeder::class,
         ]);
     }
 }

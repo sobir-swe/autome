@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->foreignId('student_id')->constrained('students')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('password');
+            $table->string('relation_type');
             $table->string('email')->unique();
             $table->string('first_number')->unique();
             $table->string('second_number')->unique();
