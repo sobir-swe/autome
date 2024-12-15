@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Instructor;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
-class InstructorController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class InstructorController extends Controller
     {
         return response()->json([
             'status' => 'success',
-            'data' => Instructor::all()
+            'data' => Student::all()
         ]);
     }
 
@@ -32,12 +32,12 @@ class InstructorController extends Controller
             'email' => 'required|string|email|max:255|unique:instructors,email',
         ]);
 
-        $instructor = Instructor::query()->create($validated);
+        $student = Student::query()->create($validated);
 
         return response()->json([
-            'message' => 'Instructor created successfully!',
+            'message' => 'Student created successfully!',
             'status' => 'success',
-            'data' => $instructor
+            'data' => $student
         ]);
     }
 
@@ -46,17 +46,17 @@ class InstructorController extends Controller
      */
     public function show(int $id): \Illuminate\Http\JsonResponse
     {
-        $instructor = Instructor::query()->findOrFail($id);
+        $student = Student::query()->findOrFail($id);
 
-        if (!$instructor) {
+        if (!$student) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Instructor not found!'
+                'message' => 'Student not found!'
             ], 404);
         }
         return response()->json([
             'status' => 'success',
-            'data' => $instructor
+            'data' => $student
         ]);
     }
 
@@ -65,12 +65,12 @@ class InstructorController extends Controller
      */
     public function update(Request $request, int $id): \Illuminate\Http\JsonResponse
     {
-        $instructor = Instructor::query()->findOrFail($id);
+        $student = Student::query()->findOrFail($id);
 
-        if (!$instructor) {
+        if (!$student) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Instructor not found!'
+                'message' => 'Student not found!'
             ], 404);
         }
         $validated = $request->validate([
@@ -82,11 +82,11 @@ class InstructorController extends Controller
             'email' => 'required|string|email|max:255|unique:instructors,email',
         ]);
 
-        $instructor->update($validated);
+        $student->update($validated);
         return response()->json([
-            'message' => 'Instructor updated successfully!',
+            'message' => 'Student updated successfully!',
             'status' => 'success',
-            'data' => $instructor
+            'data' => $student
         ]);
     }
 
@@ -95,18 +95,18 @@ class InstructorController extends Controller
      */
     public function destroy(int $id): \Illuminate\Http\JsonResponse
     {
-        $instructor = Instructor::query()->findOrFail($id);
+        $student = Student::query()->findOrFail($id);
 
-        if (!$instructor) {
+        if (!$student) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Instructor not found!'
+                'message' => 'Student not found!'
             ], 404);
         }
-        $instructor->delete();
+        $student->delete();
         return response()->json([
             'status' => 'success',
-            'message' => 'Instructor deleted successfully!'
+            'message' => 'Student deleted successfully!'
         ]);
     }
 }

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('branch_id')->constrained('branches')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('password');
             $table->string('email')->unique();
-            $table->foreignId('student_responsible_id')->constrained('student_responsibles')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('phone_number');
             $table->timestamps();
         });

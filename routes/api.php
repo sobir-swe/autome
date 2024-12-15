@@ -9,6 +9,7 @@ use App\Http\Controllers\LidController;
 use App\Http\Controllers\ReasonLidController;
 use App\Http\Controllers\ReasonStatusController;
 use App\Http\Controllers\SocialNetworkController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::apiResource('/reason_lids', ReasonLidController::class);
@@ -20,3 +21,4 @@ Route::apiResource('/social_networks', SocialNetworkController::class);
 Route::apiResource('center_social_networks', CenterSocialNetworkController::class);
 Route::apiResource('/branches', BranchController::class);
 Route::apiResource('/instructors', InstructorController::class);
+Route::apiResource('/students', StudentController::class);

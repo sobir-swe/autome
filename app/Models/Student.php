@@ -3,19 +3,20 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Passport\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Laravel\Sanctum\HasApiTokens;
 
-class Instructor extends Authenticatable
+class Student extends Model
 {
-    use HasApiTokens, HasFactory;
+    /** @use HasFactory<\Database\Factories\StudentFactory> */
+    use HasFactory, HasApiTokens;
 
     protected $fillable = [
         'first_name',
         'last_name',
         'branch_id',
-        'email',
         'password',
+        'email',
         'phone_number',
     ];
 
@@ -28,5 +29,4 @@ class Instructor extends Authenticatable
     {
         return $this->belongsTo(Branch::class);
     }
-
 }
