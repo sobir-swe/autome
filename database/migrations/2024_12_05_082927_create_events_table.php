@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->datetime('date');
-            $table->foreignId('stage_id')->constrained('stages')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('center_id')->constrained('centers')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('branch_id')->constrained('branches')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('type_id')->constrained('event_types')->cascadeOnDelete()->cascadeOnUpdate();

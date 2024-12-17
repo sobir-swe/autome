@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
             InstructorSeeder::class,
             StudentSeeder::class,
             StudentResponsibleSeeder::class,
+            PaymentSeeder::class,
+            GroupSeeder::class,
+            LessonSeeder::class,
         ]);
     }
 }
