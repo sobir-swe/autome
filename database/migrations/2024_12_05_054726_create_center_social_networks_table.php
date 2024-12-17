@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lid_statuses', function (Blueprint $table) {
+        Schema::create('center_social_networks', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
+            $table->foreignId('center_id')->constrained('centers')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('social_network_id')->constrained('social_networks')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->string('username');
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lid_statuses');
+        Schema::dropIfExists('center_social_networks');
     }
 };

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('lid_stage');
             $table->datetime('test_date');
-            $table->foreignId('lid_stage_id')->constrained('stages')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('lid_status_id')->constrained('reason_statuses')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('cancel_reason_id')->constrained('reason_lids')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
